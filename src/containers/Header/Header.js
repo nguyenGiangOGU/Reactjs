@@ -6,11 +6,22 @@ import Navigator from '../../components/Navigator';
 import { adminMenu } from './menuApp';
 import './Header.scss';
 
+
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoggedIn: false,
+        }
+    }
+    handleLogOut = () => {
+        this.props.processLogout()
+        window.location.href = '/login'
+    }
 
     render() {
-        const { processLogout } = this.props;
 
+        console.log(this.props);
         return (
             <div className="header-container">
                 {/* thanh navigator */}
@@ -19,24 +30,29 @@ class Header extends Component {
                 </div>
 
                 {/* nút logout */}
-                <div className="btn btn-logout" onClick={processLogout}>
-                    <i className="fas fa-sign-out-alt"></i>
+                <div className="btn btn-logout" onClick={this.handleLogOut}>
+                    <i  className="fas fa-sign-out-alt"></i>
                 </div>
             </div>
         );
     }
-
+  
+    componentDidUpdate(prevProps){
+        if(true) {
+            console.log(this.props)
+        }
+     }
 }
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.admin.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        processLogout: () => dispatch(actions.processLogout()),
+        processLogout: () => dispatch(actions.processLogout())
     };
 };
 

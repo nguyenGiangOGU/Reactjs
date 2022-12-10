@@ -10,11 +10,12 @@ class System extends Component {
         const { systemMenuPath } = this.props;
         return (
             <div className="system-container">
+                
                 <div className="system-list">
                     <Switch>
-                        <Route path="/system/user-manage" component={UserManage} />
-                        <Route path="/system/product-manage" component={ProductManage} />
-                        <Route path="/system/register-package-group-or-account" component={RegisterPackageGroupOrAcc} />
+                        {/* <Route path="/system/product-manage" exact component={ProductManage} />
+                        <Route path="/system/user-manage" exact component={UserManage}/>
+                        <Route path="/system/register-package-group-or-account" exact component={RegisterPackageGroupOrAcc} /> */}
                         <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                     </Switch>
                 </div>

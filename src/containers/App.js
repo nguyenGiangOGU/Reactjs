@@ -11,12 +11,16 @@ import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authenticati
 import { path } from '../utils'
 
 import Home from '../routes/Home';
-import Login from '../routes/Login';
+// import Login from '../routes/Login'; ADMIN
+import Login from '../containers/Auth/Login'; //CUSTOMER
 import Header from './Header/Header';
 import System from '../routes/System';
 
 import { CustomToastCloseButton } from '../components/CustomToast';
 import ConfirmModal from '../components/ConfirmModal';
+import ProductManage from './System/ProductManage';
+import UserManage from './System/UserManage';
+import RegisterPackageGroupOrAcc from './System/RegisterPackageGroupOrAcc';
 
 class App extends Component {
 
@@ -35,22 +39,26 @@ class App extends Component {
     };
 
     componentDidMount() {
-        this.handlePersistorState();
+        // this.handlePersistorState();
     }
-
+    
     render() {
         return (
             <Fragment>
                 <Router history={history}>
                     <div className="main-container">
                         <ConfirmModal />
-                        {this.props.isLoggedIn && <Header />}
-
+                        {this.props.isLoggedIn && <Header isLoggedIn={this.props.isLoggedIn} />}
                         <span className="content-container">
                             <Switch>
+                                <Route path={path.SYSTEM} exact component={userIsAuthenticated(System)} />
                                 <Route path={path.HOME} exact component={(Home)} />
-                                <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
-                                <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
+                                <Route path={path.LOGIN} exact component={userIsNotAuthenticated(Login)} />
+
+                                {/* ADMIN */}
+                                <Route path="/system/product-manage" exact component={ProductManage} />
+                                <Route path="/system/user-manage" exact component={UserManage}/>
+                                <Route path="/system/register-package-group-or-account" exact component={RegisterPackageGroupOrAcc} />
                             </Switch>
                         </span>
 
@@ -70,7 +78,7 @@ class App extends Component {
 const mapStateToProps = state => {
     return {
         started: state.app.started,
-        isLoggedIn: state.admin.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn
     };
 };
 
