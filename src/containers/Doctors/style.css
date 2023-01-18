@@ -1,0 +1,337 @@
+.cuaso-vung {
+    height: 100vh;
+    z-index: 2000;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 50px;
+    overflow-y: scroll;
+}
+
+.cuaso-vung.cuaso-co-timkiem {
+    padding-top: 100px;
+}
+
+.hide-nav .cuaso-vung.cuaso-co-timkiem {
+    padding-top: 50px;
+}
+
+.cuaso-dau {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    padding-left: 50px;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    z-index: 2;
+}
+
+.cuaso-tieude {
+    line-height: 50px;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 15px;
+}
+
+.cuaso-dong,
+.nut-dong {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    left: 0;
+    line-height: 50px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+}
+
+.bt-g {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cuaso-timkiem {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background: #f5f5f5;
+    top: 50px;
+    height: 50px;
+    padding: 10px 15px;
+    z-index: 1;
+}
+
+.hide-nav .cuaso-timkiem {
+    top: 0;
+}
+
+.cuaso-timkiem input {
+    width: 100%;
+    height: 30px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.cuaso-timkiem input:focus {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.cuaso-daumuc {
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.cuasosss .chuyenkhoa-ds ul,
+.cuasosss .bacsi-ds ul,
+.cuasosss .csyt-ds ul,
+.cuasosss .goikham-ds ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cuasosss .bacsi-ds ul li,
+.cuasosss .csyt-ds ul li,
+.cuasosss .chuyenkhoa-ds ul li,
+.cuasosss .goikham-ds ul li {
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cuasosss .bacsi-ds ul li img,
+.cuasosss .csyt-ds ul li img,
+.cuasosss .chuyenkhoa-ds ul li img,
+.cuasosss .goikham-ds ul li img {
+    float: left;
+    margin-right: 10px;
+}
+
+.cuasosss .bacsi-ds ul li img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.cuasosss .bacsi-ds li h3,
+.cuasosss .csyt-ds li h3,
+.cuasosss .chuyenkhoa-ds li h3,
+.cuasosss .goikham-ds li h3 {
+    display: block;
+    line-height: 1.3em;
+    font-size: 14px;
+    color: #333;
+}
+
+.cuasosss .bacsi-ds li h4,
+.cuasosss .csyt-ds li h4,
+.cuasosss .goikham-ds li h4 {
+    color: #666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.cuasosss .bacsi-ds li h4 span+span:before,
+.cuasosss .goikham-ds li h4 span+span:before {
+    content: " - ";
+}
+
+.cuasosss .bacsi-ds-noibat {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.cuasosss .bacsi-ds-noibat span {
+    background: #eee;
+    padding: 3px 7px;
+    border-radius: 5px;
+}
+
+.cuasosss .bacsi-ds-noibat span+span {
+    margin-left: 5px;
+}
+
+.phandoan .bacsi-ds {
+    height: 235px;
+}
+
+.phandoan .bacsi-ds a {
+    display: inline-block;
+    position: relative;
+    vertical-align: top !important;
+    white-space: normal !important;
+    background: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    margin: 5px;
+}
+
+.phandoan .bacsi-ds a {
+    border: 1px solid #eee;
+    text-align: center;
+    height: 225px;
+    padding: 10px 5px;
+}
+
+@media (min-width: 768px) {
+    .phandoan .bacsi-ds {
+        height: 255px;
+    }
+
+    .phandoan .sanpham-ds {
+        height: 350px;
+    }
+
+    .phandoan .bacsi-ds a {
+        height: 245px;
+    }
+
+    .phandoan .sanpham-ds a {
+        height: 340px;
+    }
+
+    .phandoan .chuyenkhoa-ds {
+        height: 200px;
+    }
+
+    .phandoan .csyt-ds {
+        height: 240px;
+    }
+}
+
+.phandoan .bacsi-ds a:hover h3,
+.phandoan .phandoan-ds-2 a:hover h3,
+.phandoan .phandoan-ds-4 a:hover h3 {
+    color: #45c3d2;
+}
+
+.phandoan .bacsi-ds a h3 {
+    color: #111;
+    white-space: pre-wrap;
+    font-size: 13px;
+}
+
+.phandoan .bacsi-ds a h4 {
+    color: #555;
+    font-size: 12px;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .phandoan .bacsi-ds a h4 {
+        display: block;
+    }
+}
+
+.phandoan .bacsi-ds a h4 span+span:before {
+    content: "- ";
+}
+
+.phandoan .bacsi-ds a .bacsi-ds-noibat {
+    overflow: hidden;
+    color: #45c3d3;
+    padding: 5px 0px 0px 0px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+.phandoan .bacsi-ds a .bacsi-ds-noibat span+span:before {
+    content: "·";
+}
+
+.phandoan .bacsi-ds a button,
+.phandoan .phandoan-ds-4 a button {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #337ab7;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.phandoan .bacsi-ds a button {
+    margin: 10px 0;
+}
+
+.bacsi-ds-slick:not(.slick-slider),
+.phandoan-slick-2:not(.slick-slider),
+.phandoan-slick-4:not(.slick-slider) {
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.bacsi-ds-slick:not(.slick-slider) a,
+.phandoan-slick-4:not(.slick-slider) a {
+    min-width: 35vw;
+}
+
+@media(min-width: 768px) {
+
+    .bacsi-ds-slick:not(.slick-slider) a,
+    .phandoan-slick-4:not(.slick-slider) a {
+        min-width: 19vw;
+    }
+
+    .phandoan-slick-2:not(.slick-slider) a {
+        min-width: 46vw;
+    }
+}
+
+.cuasosss .bacsi-ds-noibat {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.cuasosss .bacsi-ds-noibat span {
+    background: #eee;
+    padding: 3px 7px;
+    border-radius: 5px;
+}
+
+.cuasosss .bacsi-ds-noibat span+span {
+    margin-left: 5px;
+}
+
+a {
+    color: var(--mau-bc-16);
+    text-decoration: none;
+}
+
+.phandoan-tieude {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 0px 5px 0px;
+}
+
+@media (max-width: 768px) {
+    .phandoan-tieude {
+        font-size: 16px;
+        padding: 0 100px 0 0;
+    }
+}
