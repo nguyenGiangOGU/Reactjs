@@ -161,7 +161,7 @@ class Login extends Component {
 const mapStateToProps = state => {
     return {
         lang: state.app.language
-    };
+    };a
 };
 
 const mapDispatchToProps = dispatch => {

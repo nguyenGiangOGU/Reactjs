@@ -4,13 +4,13 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import UserManage from '../containers/System/UserManage';
 import ProductManage from '../containers/System/ProductManage';
 import RegisterPackageGroupOrAcc from '../containers/System/RegisterPackageGroupOrAcc';
-
 class System extends Component {
     render() {
-        const { systemMenuPath } = this.props;
-        return (
+         {/* {this.props.isLoggedIn && <Header isLoggedIn={this.props.isLoggedIn} />} */}
+        const { systemMenuPath} = this.props;
+        return ( 
+            <div>
             <div className="system-container">
-                
                 <div className="system-list">
                     <Switch>
                         {/* <Route path="/system/product-manage" exact component={ProductManage} />
@@ -19,6 +19,7 @@ class System extends Component {
                         <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                     </Switch>
                 </div>
+            </div>
             </div>
         );
     }

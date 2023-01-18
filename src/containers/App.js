@@ -17,11 +17,13 @@ import Header from './Header/Header';
 import System from '../routes/System';
 
 import { CustomToastCloseButton } from '../components/CustomToast';
-import ConfirmModal from '../components/ConfirmModal';
+import HomePage from './HomePage/HomePage';
 import ProductManage from './System/ProductManage';
 import UserManage from './System/UserManage';
 import RegisterPackageGroupOrAcc from './System/RegisterPackageGroupOrAcc';
 
+
+import CustomScrollbars from '../components/CustomScrollbars';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -47,20 +49,24 @@ class App extends Component {
             <Fragment>
                 <Router history={history}>
                     <div className="main-container">
-                        <ConfirmModal />
                         {this.props.isLoggedIn && <Header isLoggedIn={this.props.isLoggedIn} />}
-                        <span className="content-container">
+                        <div className="content-container">
+                        <CustomScrollbars style={{height: '100vh',width: '100%'}}>
                             <Switch>
                                 <Route path={path.SYSTEM} exact component={userIsAuthenticated(System)} />
                                 <Route path={path.HOME} exact component={(Home)} />
-                                <Route path={path.LOGIN} exact component={userIsNotAuthenticated(Login)} />
+                                <Route path={path.LOGIN} exact component={userIsNotAuthenticated(Login)} /> {/*userIsNotAuthenticated check quyền có quyền vào hay k? */}
+                                <Route path={path.HOMEPAGE} exact component={(HomePage)} />
+
 
                                 {/* ADMIN */}
                                 <Route path="/system/product-manage" exact component={ProductManage} />
                                 <Route path="/system/user-manage" exact component={UserManage}/>
                                 <Route path="/system/register-package-group-or-account" exact component={RegisterPackageGroupOrAcc} />
+                                
                             </Switch>
-                        </span>
+                        </CustomScrollbars>
+                        </div>
 
                         <ToastContainer
                             className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
